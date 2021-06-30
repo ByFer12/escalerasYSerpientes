@@ -5,7 +5,9 @@
  */
 package graficos;
 
+import archivos.JugadorGuadrdado;
 import javax.swing.JOptionPane;
+import jugadores.Jugador;
 import jugadores.VectorJugador;
 
 /**
@@ -156,14 +158,14 @@ public class IngresoDatos extends javax.swing.JDialog {
     }//GEN-LAST:event_nombreActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        Jugador jugador;
         try {
             String nom, apell;
             int id, aux = 0;
             nom = nombre.getText();
             apell = apellido.getText();
             id = Integer.parseInt(ident.getText());
-            VectorJugador.ingresoDatos(nom, apell, id);
+            jugador = new Jugador(nom, apell, id);
             nombre.setText("");
             apellido.setText("");
             ident.setText("");
@@ -172,6 +174,7 @@ public class IngresoDatos extends javax.swing.JDialog {
 
             JOptionPane.showMessageDialog(null, "Debe llenar los espacios en blanco\ncon sus datos");
         }
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

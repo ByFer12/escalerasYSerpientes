@@ -5,6 +5,10 @@
  */
 package graficos;
 
+import java.io.File;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author Sammy Guergachi <sguergachi at gmail.com>
@@ -53,14 +57,14 @@ public class VentanaInicial extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(17, 17, 4));
         jLabel4.setText("Elija los jugadores");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(10, 220, 210, 30);
+        jLabel4.setBounds(10, 210, 210, 30);
 
         jLabel6.setBackground(new java.awt.Color(232, 244, 52));
         jLabel6.setFont(new java.awt.Font("Waree", 3, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(14, 14, 5));
         jLabel6.setText("Elija el Tablero");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(300, 210, 220, 40);
+        jLabel6.setBounds(320, 200, 220, 40);
 
         jButton1.setBackground(new java.awt.Color(53, 84, 176));
         jButton1.setFont(new java.awt.Font("Ubuntu", 3, 24)); // NOI18N
@@ -73,22 +77,36 @@ public class VentanaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(40, 150, 140, 50);
+        jButton1.setBounds(40, 130, 140, 50);
 
         jButton2.setBackground(new java.awt.Color(53, 94, 198));
         jButton2.setFont(new java.awt.Font("Ubuntu", 3, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(62, 194, 66));
         jButton2.setText("Buscar Archivo");
         jButton2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2);
-        jButton2.setBounds(310, 150, 200, 50);
+        jButton2.setBounds(310, 130, 200, 50);
 
+        aceptar.setBackground(new java.awt.Color(80, 66, 125));
         aceptar.setFont(new java.awt.Font("Ubuntu", 3, 24)); // NOI18N
+        aceptar.setForeground(new java.awt.Color(122, 156, 70));
         aceptar.setText("Aceptar");
+        aceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aceptarActionPerformed(evt);
+            }
+        });
         getContentPane().add(aceptar);
-        aceptar.setBounds(400, 300, 130, 40);
+        aceptar.setBounds(400, 270, 130, 40);
 
+        salir.setBackground(new java.awt.Color(214, 56, 82));
         salir.setFont(new java.awt.Font("Ubuntu", 3, 18)); // NOI18N
+        salir.setForeground(new java.awt.Color(231, 211, 213));
         salir.setText("Salir");
         salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +114,7 @@ public class VentanaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(salir);
-        salir.setBounds(60, 310, 49, 31);
+        salir.setBounds(60, 280, 110, 31);
 
         jLabel3.setBackground(new java.awt.Color(87, 110, 118));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Escaleras.png"))); // NOI18N
@@ -115,6 +133,22 @@ public class VentanaInicial extends javax.swing.JFrame {
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
        System.exit(0);
     }//GEN-LAST:event_salirActionPerformed
+
+    private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
+            dispose();
+    }//GEN-LAST:event_aceptarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       JFileChooser otro = new JFileChooser();
+       FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.TXT","txt");
+       otro.setFileFilter(filtro);
+       int seleccion= otro.showOpenDialog(this);
+       if(seleccion==JFileChooser.APPROVE_OPTION){
+           File archivo= otro.getSelectedFile();
+    
+           
+       }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
