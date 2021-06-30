@@ -5,7 +5,7 @@
  */
 package principal;
 
-import graficos.VentanaPrincipal;
+import graficos.VentanaInicial;
 
 
 
@@ -19,9 +19,9 @@ public class Ejecutable {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
- VentanaPrincipal v1= new VentanaPrincipal();
+ VentanaInicial v1= new VentanaInicial();
         v1.setVisible(true);
-        v1.setSize(400,300);
+        v1.setSize(570,380);
         v1.setLocationRelativeTo(null);
     }
     

@@ -9,7 +9,7 @@ public class Jugador {
     private int partidasGanadas;
     private int partidasPerdidas;
 
-    public Jugador(int Id, String Nombre, String Apellido) {
+    public Jugador( String Nombre, String Apellido,int id) {
         this.Id = Id;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
