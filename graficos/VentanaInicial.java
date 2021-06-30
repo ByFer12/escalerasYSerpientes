@@ -14,7 +14,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public class VentanaInicial extends javax.swing.JFrame {
- IngresoJugadores jug;
+
+    IngresoJugadores jug;
+
     /**
      * Creates new form VentanaPrincipal
      */
@@ -125,32 +127,36 @@ public class VentanaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jug= new IngresoJugadores(new javax.swing.JDialog(), true);
+        jug = new IngresoJugadores(new javax.swing.JDialog(), true);
         jug.setVisible(true);
         jug.setLocationRelativeTo(null);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
-       System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_salirActionPerformed
 
     private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
-            dispose();
+           Tablero tabla1=new Tablero();
+           tabla1.setVisible(true);
+           tabla1.setLocationRelativeTo(null);
+           this.dispose();
+        
+        dispose();
     }//GEN-LAST:event_aceptarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //Creamos la clase filechooser para cargar el archivo
         JFileChooser otro = new JFileChooser();
         //filtramos el archivo para que solo abra archivos .txt
-       FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.TXT","txt");
-       otro.setFileFilter(filtro);
-       //aqui seleccionamos en la opcion aceptar y nos debe cargar otro frame un amatriz de paneles
-       int seleccion= otro.showOpenDialog(this);
-       if(seleccion==JFileChooser.APPROVE_OPTION){
-           File archivo= otro.getSelectedFile();
-    
-           
-       }
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.TXT", "txt");
+        otro.setFileFilter(filtro);
+        //aqui seleccionamos en la opcion aceptar y nos debe cargar otro frame un amatriz de paneles
+        int seleccion = otro.showOpenDialog(this);
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            File archivo = otro.getSelectedFile();
+
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
