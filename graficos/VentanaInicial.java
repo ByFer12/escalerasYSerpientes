@@ -139,9 +139,12 @@ public class VentanaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_aceptarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       JFileChooser otro = new JFileChooser();
+        //Creamos la clase filechooser para cargar el archivo
+        JFileChooser otro = new JFileChooser();
+        //filtramos el archivo para que solo abra archivos .txt
        FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.TXT","txt");
        otro.setFileFilter(filtro);
+       //aqui seleccionamos en la opcion aceptar y nos debe cargar otro frame un amatriz de paneles
        int seleccion= otro.showOpenDialog(this);
        if(seleccion==JFileChooser.APPROVE_OPTION){
            File archivo= otro.getSelectedFile();
