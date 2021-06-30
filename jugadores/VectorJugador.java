@@ -3,12 +3,12 @@ package jugadores;
 import javax.swing.JOptionPane;
 
 public class VectorJugador {
-    private final int MAXIMO_JUGADORES=6;
     private static int nJugadores;
 
     public static void setnJugadores(int nJugadores) {
         VectorJugador.nJugadores = nJugadores;
     }
+    
     private static Jugador [] jugadores=new Jugador[nJugadores];
     
     public static void ingresoDatos(String nombre,String apellido,int id){
@@ -18,6 +18,12 @@ public class VectorJugador {
         }
         
     }
+
+    public static int getnJugadores() {
+        return nJugadores;
+    }
+    
+    
 
     
 

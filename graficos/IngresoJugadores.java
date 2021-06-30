@@ -116,18 +116,19 @@ public class IngresoJugadores extends javax.swing.JDialog {
     }//GEN-LAST:event_cantJugadoresActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int nJugadores = 0;
+       try{
+        int nJugadores;
         String dato1;
 
         nJugadores = Integer.parseInt(cantJugadores.getText());
         if (nJugadores > 6) {
             JOptionPane.showMessageDialog(null, "No se han guardado los datos"
-                    + "\nEl numero maximo de ugadores es 6");
+                    + "\nEl numero maximo de jugadores es 6");
             nJugadores = 0;
             dispose();
-        } else if (nJugadores < 1) {
+        } else if (nJugadores < 2) {
             JOptionPane.showMessageDialog(null, "No se han guardado los datos"
-                    + "\nNo se pueden almacenar numeros negativos");
+                    + "\nNo pueden jugar menos de dos personas");
             nJugadores = 0;
             dispose();
 
@@ -135,9 +136,20 @@ public class IngresoJugadores extends javax.swing.JDialog {
             VectorJugador.setnJugadores(nJugadores);
             dispose();
             ing = new IngresoDatos(new javax.swing.JDialog(), true);
+
+        }
+       }catch(NumberFormatException e){
+           JOptionPane.showMessageDialog(null, "Debe ingresar la cantidad\n de personas a jugar");
+           
+       }
+
+        int aux = 0;
+        while (aux < VectorJugador.getnJugadores()) {
             ing.setVisible(true);
             ing.setLocationRelativeTo(null);
+            aux++;
         }
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

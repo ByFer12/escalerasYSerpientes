@@ -32,6 +32,8 @@ public class VentanaInicial extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        aceptar = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,14 +53,14 @@ public class VentanaInicial extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(17, 17, 4));
         jLabel4.setText("Elija los jugadores");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(10, 250, 210, 30);
+        jLabel4.setBounds(10, 220, 210, 30);
 
         jLabel6.setBackground(new java.awt.Color(232, 244, 52));
         jLabel6.setFont(new java.awt.Font("Waree", 3, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(14, 14, 5));
         jLabel6.setText("Elija el Tablero");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(300, 240, 220, 40);
+        jLabel6.setBounds(300, 210, 220, 40);
 
         jButton1.setBackground(new java.awt.Color(53, 84, 176));
         jButton1.setFont(new java.awt.Font("Ubuntu", 3, 24)); // NOI18N
@@ -71,7 +73,7 @@ public class VentanaInicial extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(40, 180, 140, 50);
+        jButton1.setBounds(40, 150, 140, 50);
 
         jButton2.setBackground(new java.awt.Color(53, 94, 198));
         jButton2.setFont(new java.awt.Font("Ubuntu", 3, 24)); // NOI18N
@@ -79,8 +81,24 @@ public class VentanaInicial extends javax.swing.JFrame {
         jButton2.setText("Buscar Archivo");
         jButton2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         getContentPane().add(jButton2);
-        jButton2.setBounds(310, 180, 200, 50);
+        jButton2.setBounds(310, 150, 200, 50);
 
+        aceptar.setFont(new java.awt.Font("Ubuntu", 3, 24)); // NOI18N
+        aceptar.setText("Aceptar");
+        getContentPane().add(aceptar);
+        aceptar.setBounds(400, 300, 130, 40);
+
+        salir.setFont(new java.awt.Font("Ubuntu", 3, 18)); // NOI18N
+        salir.setText("Salir");
+        salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(salir);
+        salir.setBounds(60, 310, 49, 31);
+
+        jLabel3.setBackground(new java.awt.Color(87, 110, 118));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Escaleras.png"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(0, 0, 570, 380);
@@ -93,6 +111,10 @@ public class VentanaInicial extends javax.swing.JFrame {
         jug.setVisible(true);
         jug.setLocationRelativeTo(null);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_salirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,11 +153,13 @@ public class VentanaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton aceptar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }
